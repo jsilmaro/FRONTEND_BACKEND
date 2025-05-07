@@ -76,6 +76,7 @@ def get_active_accounts(request):
 
 
 
+<<<<<<< HEAD
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -166,4 +167,6 @@ def spending_by_category(request):
     return Response(transactions)
 
 
+=======
+>>>>>>> cbfd5a5cd942fd8a2048e338c61911d4fb0d398d
 

@@ -3,10 +3,28 @@ from .models import CustomUser
 from django.contrib.auth import authenticate
 
 class RegisterSerializer(serializers.ModelSerializer):
+<<<<<<< HEAD
+=======
     class Meta:
         model = CustomUser
         fields = ["email", "name", "password"]
 
+    def create(self, validated_data):
+        user = CustomUser.objects.create_user(
+            email=validated_data["email"],
+            name=validated_data["name"],
+            password=validated_data["password"]
+        )
+        return user
+
+
+class UserSerializer(serializers.ModelSerializer):
+>>>>>>> cbfd5a5cd942fd8a2048e338c61911d4fb0d398d
+    class Meta:
+        model = CustomUser
+        fields = ["email", "name", "password"]
+
+<<<<<<< HEAD
     def create(self, validated_data):
         user = CustomUser.objects.create_user(
             email=validated_data["email"],
@@ -26,6 +44,8 @@ class UserSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}
         }
 
+=======
+>>>>>>> cbfd5a5cd942fd8a2048e338c61911d4fb0d398d
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField(write_only=True)
